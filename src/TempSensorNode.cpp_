@@ -1,0 +1,39 @@
+/*
+ * SensorNode.cpp
+ *
+ *  Created on: 16.05.2016
+ *      Author: ian
+ */
+
+#include "TempSensorNode.h"
+#include <Homie.hpp>
+
+
+TempSensorNode::TempSensorNode() :
+	HomieNode("Sensor", "sensor_t",
+		[](String property, HomieRange range, String value) { return false; }),
+	lastLoop8000ms(0) {
+	advertise("degrees");
+
+}
+
+void TempSensorNode::setup() {
+	Wire.begin();
+	Sensors::initialize();
+	char printbuf[50];
+	snprintf(printbuf, sizeof(printbuf),
+			"Initialized sensors at %x (Thermo)",
+			Sensors::getThermometer());
+	Serial.println(printbuf);
+	htu.begin();
+}
+
+void TempSensorNode::loop() {
+	if (millis() - lastLoop8000ms >= 30000UL || lastLoop8000ms == 0) {
+//		float cur_temp = Sensors::getThermometer()->getTemperature();
+//		float cur_press = Sensors::getBarometer()->getSealevelPressure(320.0);
+		temp = htu.readTemperature();
+		lastLoop8000ms = millis();
+		setProperty("degrees").send(String(temp));
+	}
+}
