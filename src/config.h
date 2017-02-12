@@ -1,5 +1,5 @@
-#ifndef SRC_DEFAULTS_H_
-#define SRC_DEFAULTS_H_
+#ifndef SRC_CONFIG_H
+#define SRC_CONFIG_H
 
 //------------------------------------------------------------------------------
 // SET BY PLATFORMIO
@@ -19,6 +19,9 @@
 #define APP_WEBSITE             "http://yves.laedis.ch"
 
 
+#define DS18B20_BUS1            2 // Bus0 On Pin D1
+#define DS18B20_BUS2            0 // Bus1 on Pin D2
+
 // -----------------------------------------------------------------------------
 // Configuration
 // -----------------------------------------------------------------------------
@@ -28,4 +31,6 @@
 
 // -----------------------------------------------------------------------------
 
-#endif /* SRC_DEFAULTS_H_ */
+
+
+#endif /* end of include guard: SRC_CONFIG_H */

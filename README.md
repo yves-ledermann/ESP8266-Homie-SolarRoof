@@ -16,6 +16,11 @@ TO DO:
 - clean up the code
 - seperate nodes from main project for easier maint & reuse
 
+//TO-DO
+// Set Alarms
+// Sensor.setHighAlarmTemp(sensorValues.Address, 30);
+//Sensor.setLowAlarmTemp(sensorValues.Address, 22);
+
 Got a lot of code from https://github.com/euphi/
 Thank you @euphi
 

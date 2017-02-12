@@ -1,13 +1,14 @@
-#ifndef SRC_OTA_H_
-#define SRC_OTA_H_
+#ifndef SRC_OTA_H
+#define SRC_OTA_H
 
+
+#include "config.h"
 #include <Homie.h> // used for logger
-#include "ArduinoOTA.h"
-#include "defaults.h"
+#include <ArduinoOTA.h>
 
 void otaSetup();
 
 void otaLoop();
 
 
-#endif /* SRC_OTA_H_ */
+#endif /* end of include guard: SRC_OTA_H */

@@ -1,5 +1,4 @@
-#ifndef SRC_ONEWIRE_H_
-#define SRC_ONEWIRE_H_
+#pragma once
 
 #include <Homie.h>
 
@@ -8,5 +7,3 @@
 
  void loopOneWire();
  void setupOneWire(void);
-
-#endif /* SRC_ONEWIRE_H_ */

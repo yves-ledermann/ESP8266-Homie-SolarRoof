@@ -17,7 +17,6 @@ OneWire owbus[] = {oneWire0, oneWire1};
 
 DallasTemperature sensor[oneWirePinsCount];
 int sensorsonBus[oneWirePinsCount];
-#define TEMPERATURE_PRECISION 12
 
 // Struct Array for DS18B20 Adress / Temp
 	typedef struct
