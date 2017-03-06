@@ -19,8 +19,10 @@
 #define APP_WEBSITE             "http://yves.laedis.ch"
 
 
-#define DS18B20_BUS1            2 // Bus0 On Pin D1
-#define DS18B20_BUS2            0 // Bus1 on Pin D2
+#define DS18B20_BUS1            2 // Bus0 On Pin D3?
+#define DS18B20_BUS2            0 // Bus1 on Pin D4?
+#define USonic_PIN1             4 // Bus1 on Pin D2?
+
 
 // -----------------------------------------------------------------------------
 // Configuration

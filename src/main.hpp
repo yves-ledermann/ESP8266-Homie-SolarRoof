@@ -4,10 +4,7 @@
 #include "config.h"
 #include <Homie.h>
 
-#include <homiesupplements.h>
-#include "ota.h"
-#include "OneWire.h"
-#include <ds18b20MultiNode.hpp>
+#include <homie-esp8266-supplements.h>
 
 
 #endif /* end of include guard: SRC_MAIN_HPP */

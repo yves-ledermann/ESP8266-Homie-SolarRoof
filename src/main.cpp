@@ -6,18 +6,16 @@
 */
 #include "main.hpp"
 
-const int TEMP_INTERVAL = 10;                   // seconds
-unsigned long last_temp_sent = 0;
-
 ds18b20MultiNode TempNode1("Bus1", DS18B20_BUS1);
-//ds18b20MultiNode TempNode2("Bus2", DS18B20_BUS2);
+ds18b20MultiNode TempNode2("Bus2", DS18B20_BUS2);
+
+Ultrasonic_ME007Y_Serial DistanceNode1("Usonic1", USonic_PIN1);
 
 // -----------------------------------------------------------------------------
 // Setup Hardware
 // -----------------------------------------------------------------------------
 
 void setupHardware() {
-
       Serial.begin(SERIAL_BAUDRATE);
       Serial.println();
       Serial.println();
@@ -46,7 +44,12 @@ void setup() {
   welcome();
   otaSetup();
   setupHomie();
-//setupOneWire();
+
+//  TempNode1.setDebug(TRUE);
+//  TempNode2.setDebug(TRUE);
+
+//  TempNode1.setInterval(5);
+//  TempNode2.setInterval(7);
 }
 
 
@@ -57,5 +60,4 @@ void setup() {
 void loop() {
   Homie.loop();
   otaLoop();
-// loopOneWire();
 }
