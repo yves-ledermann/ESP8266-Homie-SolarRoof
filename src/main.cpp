@@ -6,10 +6,11 @@
 */
 #include "main.hpp"
 
-ds18b20MultiNode TempNode1("Bus1", DS18B20_BUS1);
-ds18b20MultiNode TempNode2("Bus2", DS18B20_BUS2);
+Node_ds18b20Multi TempNode1("Bus1", DS18B20_BUS1);
+Node_ds18b20Multi TempNode2("Bus2", DS18B20_BUS2);
 
-Ultrasonic_ME007Y_Serial DistanceNode1("Usonic1", USonic_PIN1);
+Node_AnalogIn LDRNode1("LDR", A0);
+//Node_UltrasonicSerial DistanceNode1("Usonic1", USonic_PIN1);
 
 // -----------------------------------------------------------------------------
 // Setup Hardware
@@ -48,8 +49,11 @@ void setup() {
 //  TempNode1.setDebug(TRUE);
 //  TempNode2.setDebug(TRUE);
 
-//  TempNode1.setInterval(5);
-//  TempNode2.setInterval(7);
+  TempNode1.setInterval(30);
+  TempNode2.setInterval(30);
+
+  LDRNode1.setInterval(2);
+//DistanceNode1.setDebug(FALSE);
 }
 
 
